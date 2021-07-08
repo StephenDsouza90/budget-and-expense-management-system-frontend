@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList } from 'react-native';
 
+import { styles } from './Styles'
+
 
 const CurrentMonthExpense = () => {
 
@@ -16,11 +18,11 @@ const CurrentMonthExpense = () => {
 
     return (
         <View>
-            <Text>Current Month Expense:</Text>
+            <Text style = {styles.titleName}>Current Month Expense</Text>
                 <FlatList
                     data={data}
                     renderItem={({ item }) => (
-                    <Text>{item.total_expense}</Text>
+                    <Text style = {styles.details}>{item.total_expense}</Text>
                     )}
                 />
         </View>

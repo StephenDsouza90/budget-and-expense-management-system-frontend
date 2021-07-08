@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { View, TextInput, Button } from 'react-native';
 
+import { styles } from './Styles'
 
 class AddExpense extends Component {
     state = {
@@ -67,34 +68,33 @@ class AddExpense extends Component {
         return (
             <View>
                 <TextInput
-                    underlineColorAndroid = "transparent"
+                    style = {styles.input}
                     placeholder = "Amount"
-                    placeholderTextColor = "#9a73ef"
                     autoCapitalize = "none"
                     keyboardType='numeric'
                     onChangeText = {this.handleAmount}
                 />
 
                 <TextInput
-                    underlineColorAndroid = "transparent"
+                    style = {styles.input}
                     placeholder = "Description"
-                    placeholderTextColor = "#9a73ef"
                     autoCapitalize = "none"
                     onChangeText = {this.handleDescription}
                 />
 
-                <select onChange={this.handleCategoryId}>
+                <select
+                    style={{ }}
+                    onChange={this.handleCategoryId}>
                     {optionItems}
                 </select>
 
-                <TouchableOpacity
+                <Button
+                    title="Submit"
                     onPress = {
                         () => this.addExpense(this.state.amount, this.state.description, this.state.categoryId)
-                        }>
+                        }
+                />
 
-                    <Text> Submit </Text>
-
-                </TouchableOpacity>
             </View>
         )
     }

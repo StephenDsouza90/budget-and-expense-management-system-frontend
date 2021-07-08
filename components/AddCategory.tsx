@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, TextInput, StyleSheet } from 'react-native';
+import { Text, View, TextInput, Button } from 'react-native';
+
+import { styles } from './Styles'
 
 
 class AddCategory extends Component {
@@ -32,19 +34,17 @@ class AddCategory extends Component {
 
         return (
             <View>
+                <Text style = {styles.titleName}>Add Category</Text>
+
                 <TextInput
-                    underlineColorAndroid = "transparent"
-                    placeholder = "Category Name"
-                    placeholderTextColor = "#9a73ef"
+                    style = {styles.input}
                     autoCapitalize = "none"
+                    placeholder = "Category Name"
                     onChangeText = {this.handleCategory}
                 />
 
-                <TouchableOpacity onPress = { () => this.addCategory(this.state.categoryName) }>
+                <Button title="Submit" onPress = { () => this.addCategory(this.state.categoryName) }/>
 
-                    <Text> Submit </Text>
-
-                </TouchableOpacity>
             </View>
         )
     }
