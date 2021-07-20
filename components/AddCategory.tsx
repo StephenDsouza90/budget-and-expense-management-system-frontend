@@ -34,7 +34,7 @@ class AddCategory extends Component {
 
         return (
             <View>
-                <Text style = {styles.titleName}>Add Category</Text>
+                <Text style = {styles.titleName}>Add a category</Text>
 
                 <TextInput
                     style = {styles.input}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Button } from 'react-native';
+import { View, TextInput, Button, Text } from 'react-native';
 
 import { styles } from './Styles'
 
@@ -7,7 +7,7 @@ class AddExpense extends Component {
     state = {
        amount: 0,
        description: '',
-       categoryId: 0,
+       categoryId: 1,
        categoryList: []
     }
 
@@ -24,6 +24,7 @@ class AddExpense extends Component {
         return item.category_name == number.target.value
     })
 
+    console.log(value[0].category_id)
     this.setState({ categoryId: value[0].category_id })
 
     }
@@ -67,6 +68,9 @@ class AddExpense extends Component {
 
         return (
             <View>
+
+                <Text style = {styles.titleName}>Add an expense</Text>
+
                 <TextInput
                     style = {styles.input}
                     placeholder = "Amount"

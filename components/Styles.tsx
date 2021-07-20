@@ -24,7 +24,27 @@ const styles = StyleSheet.create ({
         borderWidth: 1,
         placeholderTextColor: '#0000ff',
         underlineColorAndroid: 'transparent'
-      }
+      },
+    headerText: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        color: 'blue',
+        letterSpacing: 2,
+        fontFamily: 'Avenir'
+    },
+    header: {
+        width: '100%',
+        height: '10%',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        padding: 20,
+        backgroundColor: '#add8e6',
+    },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 })
 
 
